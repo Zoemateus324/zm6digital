@@ -1,8 +1,20 @@
 @{
-  margin:0px;
+  width:1200px;
+  height:900px;
+}
+body{
   padding:0px;
   color:white;
   background-color:black;
+}
+.content{
+  justify-content:center;
+}
+.nav{
+  display:flex;
+  color:white;
+  text-decoration:none;
+  
 }
 
 
@@ -21,7 +33,27 @@
     100% { transform: rotate(360deg); }
   }
 
-  .navbar{
-    display: flex;
-    text-decoration: none;
-  }
+.card-pai{
+  display:flex;
+  justify-content:space-between;
+}
+.card1 img{
+  height:95px;
+  width:125px;
+  
+}
+.card2 img{
+  height:95px;
+  width:125px;
+  
+}
+.card3 img{
+  height:95px;
+  width:125px;
+  
+}
+.card4 img{
+  height:95px;
+  width:125px;
+  
+}
