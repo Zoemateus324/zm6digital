@@ -32,20 +32,20 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
 
   const testimonials = [
     {
-      name: 'Ana Silva',
-      company: 'Silva Consultoria',
-      text: 'A ZM6 Digital transformou nossa presença online. Aumentamos nossas vendas em 150% em apenas 3 meses!',
+      name: 'André Zanforlin',
+      company: 'Lounge Multimídia',
+      text: 'A ZM6 Digital transformou nossa presença online.',
       rating: 5,
     },
     {
-      name: 'Carlos Mendes',
-      company: 'Mendes & Associados',
+      name: 'Cesar',
+      company: 'Café da roça lapa',
       text: 'Profissionais excepcionais! Entregaram muito além do que esperávamos. Recomendo de olhos fechados.',
       rating: 5,
     },
     {
-      name: 'Mariana Costa',
-      company: 'Costa Marketing',
+      name: 'Freddy Hermann',
+      company: 'Habitat Naturale',
       text: 'O site ficou perfeito e o sistema de automação revolucionou nossos processos. Equipe nota 10!',
       rating: 5,
     },

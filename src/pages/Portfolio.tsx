@@ -4,19 +4,19 @@ import { ExternalLink, ArrowRight } from 'lucide-react';
 const Portfolio: React.FC = () => {
   const projects = [
     {
-      title: 'E-commerce Moda Feminina',
+      title: 'Site de automação residencial',
       category: 'Desenvolvimento Web',
       description: 'Loja virtual completa com sistema de pagamento, gestão de estoque e painel administrativo.',
-      image: 'https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tags: ['E-commerce', 'Bubble.io', 'Stripe'],
-      results: '+200% vendas online',
+      image: 'https://loungemultimidia.com.br/wp-content/uploads/2024/11/WhatsApp-Image-2023-03-02-at-20.40.45.jpeg',
+      tags: ['E-commerce', 'wordpress'],
+      results: '+200% acessos online',
     },
     {
-      title: 'Clínica Médica Digital',
-      category: 'Sistema No-Code',
+      title: 'E-commerce de móveis planejados',
+      category: 'Desenvolvimento Web',
       description: 'Plataforma para agendamento de consultas, prontuário eletrônico e gestão de pacientes.',
-      image: 'https://images.pexels.com/photos/4386366/pexels-photo-4386366.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tags: ['Bubble.io', 'Automação', 'CRM'],
+      image: 'https://i0.wp.com/habitatnaturale.com.br/wp-content/uploads/2022/08/IMG_6830-scaled.jpg?resize=1024%2C682&ssl=1',
+      tags: ['Wordpress', 'Automação', 'CRM'],
       results: '90% redução tempo administrativo',
     },
     {
@@ -28,32 +28,25 @@ const Portfolio: React.FC = () => {
       results: '400% ROI em campanhas',
     },
     {
-      title: 'Startup EdTech',
+      title: 'Startup SOS Mecânicos',
       category: 'Branding + Web',
       description: 'Identidade visual completa e plataforma educacional para startup de tecnologia.',
-      image: 'https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tags: ['Branding', 'UX/UI', 'Sistema'],
+      image: 'https://sosmecanicos.com.br/assets/hero-automotive-DgaNSDLL.jpg',
+      tags: ['Branding', 'UX/UI', 'Sistema', 'SAAS', 'Nextjs'],
       results: 'Captação R$ 500k investimento',
     },
     {
-      title: 'Restaurante Gourmet',
-      category: 'Automação',
+      title: 'Sistema de agendamentos para salão de beleza',
+      category:  'Sistema No-Code',
       description: 'Sistema de pedidos online, cardápio digital e automação de WhatsApp.',
-      image: 'https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tags: ['Automação', 'WhatsApp Bot', 'Website'],
-      results: '150% aumento pedidos delivery',
+      image: 'https://9934cc0308d05845e5fae47761536aad.cdn.bubble.io/f1754045188143x147088987578759780/Captura%20de%20tela%202025-08-01%20074518.png?_gl=1*1kxwv8q*_gcl_au*MTc4OTE3NzY1Ni4xNzU0MDQ1MDM4*_ga*MTIyMDQ4MzYwNy4xNzU0MDQ0OTc0*_ga_BFPVR2DEE2*czE3NTQwNDQ5NzQkbzEkZzEkdDE3NTQwNDUxNjUkajIyJGwwJGgw',
+      tags: ['Automação', 'Sistema No-Code', 'Website'],
+      results: '150% aumento pedidos online',
     },
-    {
-      title: 'Imobiliária Regional',
-      category: 'Site + Tráfego',
-      description: 'Website otimizado para SEO e campanhas de tráfego pago para geração de leads.',
-      image: 'https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tags: ['SEO', 'Google Ads', 'Lead Generation'],
-      results: '300% mais leads qualificados',
-    },
+  
   ];
 
-  const categories = ['Todos', 'Desenvolvimento Web', 'Sistema No-Code', 'Marketing Digital', 'Branding + Web', 'Automação', 'Site + Tráfego'];
+  const categories = ['Todos', 'Desenvolvimento Web', 'Sistema No-Code', 'Marketing Digital', 'Branding + Web'];
   const [selectedCategory, setSelectedCategory] = React.useState('Todos');
 
   const filteredProjects = selectedCategory === 'Todos' 
