@@ -52,7 +52,13 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
     {
       name: 'Marco Antonio',
       company: 'Talent Harbor',
-      text: 'O site ficou perfeito e o sistema de automação revolucionou nossos processos. Equipe nota 10!',
+      text: 'O site da nossa empresa ficou incrível! A equipe da ZM6 Digital é super profissional e atenciosa.',
+      rating: 5,
+    },
+    {
+      name: 'Edvan Santos',
+      company: 'Archlux Iluminação',
+      text: 'O site ficou incrível! Luxuoso e funcional, superou nossas expectativas.',
       rating: 5,
     },
   ];
