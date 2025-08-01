@@ -49,6 +49,12 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
       text: 'O site ficou perfeito e o sistema de automação revolucionou nossos processos. Equipe nota 10!',
       rating: 5,
     },
+    {
+      name: 'Marco Antonio',
+      company: 'Talent Harbor',
+      text: 'O site ficou perfeito e o sistema de automação revolucionou nossos processos. Equipe nota 10!',
+      rating: 5,
+    },
   ];
 
   return (
