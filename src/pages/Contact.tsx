@@ -19,33 +19,52 @@ const Contact: React.FC = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Aqui você pode implementar o envio do formulário
-    console.log('Formulário enviado:', formData);
-    setIsSubmitted(true);
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        service: '',
-        message: ''
-      });
-    }, 3000);
-  };
+ const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
+  const message = encodeURIComponent(
+    `Olá! Gostaria de solicitar um orçamento.\n\nNome: ${formData.name}\nEmpresa: ${formData.company}\nServiço: ${formData.service}\nMensagem: ${formData.message}`
+  );
+  const whatsappUrl = `https://wa.me/5511951505824?text=${message}`;
+  window.open(whatsappUrl, '_blank');
+  
+  // Mostrar confirmação no seu UI
+  setIsSubmitted(true);
 
-  const handleWhatsAppClick = () => {
-    const message = encodeURIComponent(
-      `Olá! Gostaria de solicitar um orçamento.\n\nNome: ${formData.name}\nEmpresa: ${formData.company}\nServiço: ${formData.service}\nMensagem: ${formData.message}`
-    );
-    const whatsappUrl = `https://wa.me/5511951505824?text=${message}`;
-    window.open(whatsappUrl, '_blank');
-  };
+  setTimeout(() => {
+    setIsSubmitted(false);
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      company: '',
+      service: '',
+      message: ''
+    });
+  }, 3000);
+};
+
+
+
+
+ const handleWhatsAppClick = () => {
+  console.log('formData atual:', formData);
+  const { name, company, service, message } = formData;
+  
+ const textMessage = 
+  `Olá! Gostaria de solicitar um orçamento.\n` +
+  `Nome: ${name || '-'}\n` +
+  `Empresa: ${company || '-'}\n` +
+  `Serviço: ${service || '-'}\n` +
+  `Mensagem: ${message || '-'}`;
+
+  const encodedMessage = encodeURIComponent(textMessage);
+  const whatsappUrl = `https://wa.me/5511951505824?text=${encodedMessage}`;
+
+  console.log('URL WhatsApp:', whatsappUrl);
+  window.open(whatsappUrl, '_blank');
+};
+
+
 
   const contactInfo = [
     {
@@ -256,13 +275,13 @@ const Contact: React.FC = () => {
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-4">
-                      <button
+                      {/* <button
                         type="submit"
                         className="flex-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white py-4 px-8 rounded-lg font-semibold hover:from-blue-600 hover:to-blue-700 transition-all duration-200 flex items-center justify-center group"
                       >
                         <Send className="mr-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
                         Enviar Solicitação
-                      </button>
+                      </button> */}
                       <button
                         type="button"
                         onClick={handleWhatsAppClick}

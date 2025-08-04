@@ -12,11 +12,27 @@ const Portfolio: React.FC = () => {
       results: '+200% acessos online',
     },
     {
-      title: 'E-commerce de móveis planejados',
+      title: 'Site institucional de móveis planejados',
       category: 'Desenvolvimento Web',
       description: 'Plataforma para agendamento de consultas, prontuário eletrônico e gestão de pacientes.',
       image: 'https://i0.wp.com/habitatnaturale.com.br/wp-content/uploads/2022/08/IMG_6830-scaled.jpg?resize=1024%2C682&ssl=1',
       tags: ['Wordpress', 'Automação', 'CRM'],
+      results: '90% redução tempo administrativo',
+    },
+    {
+      title: 'E-commerce de iluminação de luxo',
+      category: 'Desenvolvimento Web',
+      description: 'Loja virtual completa com sistema de pagamento, gestão de estoque e painel administrativo.',
+      image: 'https://archluxiluminacao.com.br/wp-content/uploads/2024/10/Artboard-20-1.webp',
+      tags: ['E-commerce', 'wordpress'],
+      results: '+200% acessos online',
+    },
+    {
+      title: 'Site institucional',
+      category: 'Desenvolvimento Web',
+      description: 'A Solução Ideal para o Desenvolvimento de Talentos na Sua Empresa.',
+      image: 'https://i0.wp.com/talentharborai.com.br/wp-content/uploads/2024/10/two-young-business-women-professionals-in-formal-w1-LGZUQA7.jpg?fit=1200%2C1800&ssl=1',
+      tags: ['Wordpress','CRM'],
       results: '90% redução tempo administrativo',
     },
     {
@@ -42,6 +58,22 @@ const Portfolio: React.FC = () => {
       image: 'https://9934cc0308d05845e5fae47761536aad.cdn.bubble.io/f1754045188143x147088987578759780/Captura%20de%20tela%202025-08-01%20074518.png?_gl=1*1kxwv8q*_gcl_au*MTc4OTE3NzY1Ni4xNzU0MDQ1MDM4*_ga*MTIyMDQ4MzYwNy4xNzU0MDQ0OTc0*_ga_BFPVR2DEE2*czE3NTQwNDQ5NzQkbzEkZzEkdDE3NTQwNDUxNjUkajIyJGwwJGgw',
       tags: ['Automação', 'Sistema No-Code', 'Website'],
       results: '150% aumento pedidos online',
+    },
+    {
+      title: 'Sistema para controle de obras e serviços',
+      category:  'Sistema No-Code',
+      description: 'Sistema de controle de obras e serviços com gestão de tarefas e prazos.',
+      image: 'https://829a773aacf8d24ff7f0c4344f737ff2.cdn.bubble.io/cdn-cgi/image/w=768,h=538,f=auto,dpr=1,fit=contain/f1716644654995x903806864428851100/6961929.jpg',
+      tags: ['Automação', 'Sistema No-Code', 'Website'],
+      results: '250% aumento na eficiência',
+    },
+    {
+      title: 'Sistema para controle condomínios',
+      category:  'Sistema No-Code',
+      description: 'Sistema de controle de condomínios com gestão de moradores e reservas.',
+      image: 'https://images.pexels.com/photos/7820321/pexels-photo-7820321.jpeg',
+      tags: ['Automação', 'Sistema No-Code', 'Website'],
+      results: '250% aumento na eficiência',
     },
   
   ];
