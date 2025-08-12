@@ -30,6 +30,14 @@ const Portfolio: React.FC = () => {
     {
       title: 'Site institucional',
       category: 'Desenvolvimento Web',
+      description: 'Site institucional para uma empresa no setor financeiro Garantix Investimentos.',
+      image: 'https://www.canva.com/design/DAGv4zdK7Gw/8qwutL0SRjtvxEnOOLUDEA/view?utm_content=DAGv4zdK7Gw&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hd38b6099b2https://media.canva.com/v2/image-resize/format:PNG/height:429/quality:100/uri:ifs%3A%2F%2FM%2Fdd89a67f-42c3-4332-b5d8-04eb2912f85e/watermark:F/width:942?csig=AAAAAAAAAAAAAAAAAAAAAOZaUpQCo-Zt9Iz0VkLkYCNcTMMX4EKO41JLHoFoRlWW&exp=1755041271&osig=AAAAAAAAAAAAAAAAAAAAAFbos9PZPgpVIXZQrJUFP9MkufewcTnPaJS69vJ5OZI2&signer=media-rpc&x-canva-quality=screen_3x',
+      tags: ['Site', 'React', 'Nextjs'],
+      results: 'Novo site',
+    },
+    {
+      title: 'Site institucional',
+      category: 'Desenvolvimento Web',
       description: 'A Solução Ideal para o Desenvolvimento de Talentos na Sua Empresa.',
       image: 'https://i0.wp.com/talentharborai.com.br/wp-content/uploads/2024/10/two-young-business-women-professionals-in-formal-w1-LGZUQA7.jpg?fit=1200%2C1800&ssl=1',
       tags: ['Wordpress','CRM'],
