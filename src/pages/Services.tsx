@@ -16,10 +16,10 @@ const Services: React.FC<ServicesProps> = ({ setCurrentPage }) => {
     },
     {
       icon: <Settings className="h-10 w-10" />,
-      title: 'Desenvolvimento No-Code (Bubble.io)',
-      description: 'Sistemas web completos e aplicativos sem código, com funcionalidades avançadas e integrations.',
+      title: 'Desenvolvimento de sistemas personalizados',
+      description: 'Sistemas web completos e aplicativos sem ou com código, com funcionalidades avançadas e integrations.',
       features: ['Desenvolvimento rápido', 'Integração com APIs', 'Dashboard personalizado', 'Escalabilidade'],
-      price: 'A partir de R$ 2.500',
+      price: 'A partir de R$ 4.500',
     },
     {
       icon: <Smartphone className="h-10 w-10" />,
