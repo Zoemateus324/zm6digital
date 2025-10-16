@@ -34,7 +34,7 @@ const Portfolio: React.FC = () => {
       title: 'Garantix Invest',
       category: 'Desenvolvimento Web',
       description: 'Site institucional para uma empresa no setor financeiro Garantix Investimentos.',
-      image: 'https://image.thum.io/get/width/1200/https://garantixinvest.com.br',
+      image: 'https://image.thum.io/get/width/1200/https://www.canva.com/design/DAG19oIayyk/ZWGOksx3TTUFDADcyqPHJg/view',
       tags: ['Site', 'React', 'Nextjs'],
       results: 'Novo site',
       site:'https://garantixinvest.com.br/'
@@ -53,7 +53,7 @@ const Portfolio: React.FC = () => {
       title: 'Startup SOS Mecânicos',
       category: 'Branding + Web',
       description: 'Identidade visual completa e plataforma educacional para startup de tecnologia.',
-      image: 'https://sosmecanicos.com.br/assets/hero-automotive-DgaNSDLL.jpg',
+      image: 'https://image.thum.io/get/width/1200/https://www.canva.com/design/DAG19r_lnVg/DncdCxMODmyNfD_TbbseKg/view',
       tags: ['Branding', 'UX/UI', 'Sistema', 'SAAS', 'Nextjs'],
       results: 'Captação R$ 500k investimento',
       site:'https://sosmecanicos.com.br/'
@@ -86,7 +86,7 @@ const Portfolio: React.FC = () => {
       title: 'Venha Vender',
       category:  'Sistema de anúncios',
       description: 'Sistema de controle de condomínios com gestão de moradores e reservas.',
-      image: 'https://images.pexels.com/photos/7820321/pexels-photo-7820321.jpeg',
+      image: 'https://image.thum.io/get/width/1200/https://www.canva.com/design/DAG19hTCAv0/tomAeuqX8gGwOBwvDEei1g/view',
       tags: ['Website', 'Anúncios', 'SAAS'],
       results: '250% aumento na eficiência',
     },
