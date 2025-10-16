@@ -1,56 +1,54 @@
 import React from 'react';
-import { ExternalLink, ArrowRight } from 'lucide-react';
+import { ExternalLink, ArrowRight, X } from 'lucide-react';
 
 const Portfolio: React.FC = () => {
   const projects = [
     {
-      title: 'Site de automação residencial',
+      title: 'Lounge Multimídia',
       category: 'Desenvolvimento Web',
       description: 'Loja virtual completa com sistema de pagamento, gestão de estoque e painel administrativo.',
       image: 'https://loungemultimidia.com.br/wp-content/uploads/2024/11/WhatsApp-Image-2023-03-02-at-20.40.45.jpeg',
       tags: ['E-commerce', 'wordpress'],
       results: '+200% acessos online',
+      site:'https://loungemultimidia.com.br/'
     },
     {
-      title: 'Site institucional de móveis planejados',
+      title: 'Habitat Naturale - Valcucine Brasil',
       category: 'Desenvolvimento Web',
       description: 'Plataforma para agendamento de consultas, prontuário eletrônico e gestão de pacientes.',
       image: 'https://i0.wp.com/habitatnaturale.com.br/wp-content/uploads/2022/08/IMG_6830-scaled.jpg?resize=1024%2C682&ssl=1',
       tags: ['Wordpress', 'Automação', 'CRM'],
       results: '90% redução tempo administrativo',
+      site:'https://habitatnaturale.com.br/'
     },
     {
-      title: 'E-commerce de iluminação de luxo',
+      title: 'Archlux Iluminação',
       category: 'Desenvolvimento Web',
       description: 'Loja virtual completa com sistema de pagamento, gestão de estoque e painel administrativo.',
       image: 'https://archluxiluminacao.com.br/wp-content/uploads/2024/10/Artboard-20-1.webp',
       tags: ['E-commerce', 'wordpress'],
       results: '+200% acessos online',
+      site:'https://archluxiluminacao.com.br/'
     },
     {
-      title: 'Site institucional',
+      title: 'Garantix Invest',
       category: 'Desenvolvimento Web',
       description: 'Site institucional para uma empresa no setor financeiro Garantix Investimentos.',
-      image: 'https://www.canva.com/design/DAGv4zdK7Gw/8qwutL0SRjtvxEnOOLUDEA/view?utm_content=DAGv4zdK7Gw&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hd38b6099b2https://media.canva.com/v2/image-resize/format:PNG/height:429/quality:100/uri:ifs%3A%2F%2FM%2Fdd89a67f-42c3-4332-b5d8-04eb2912f85e/watermark:F/width:942?csig=AAAAAAAAAAAAAAAAAAAAAOZaUpQCo-Zt9Iz0VkLkYCNcTMMX4EKO41JLHoFoRlWW&exp=1755041271&osig=AAAAAAAAAAAAAAAAAAAAAFbos9PZPgpVIXZQrJUFP9MkufewcTnPaJS69vJ5OZI2&signer=media-rpc&x-canva-quality=screen_3x',
+      image: 'https://image.thum.io/get/width/1200/https://garantixinvest.com.br',
       tags: ['Site', 'React', 'Nextjs'],
       results: 'Novo site',
+      site:'https://garantixinvest.com.br/'
     },
     {
-      title: 'Site institucional',
+      title: 'Talent Harbor',
       category: 'Desenvolvimento Web',
       description: 'A Solução Ideal para o Desenvolvimento de Talentos na Sua Empresa.',
       image: 'https://i0.wp.com/talentharborai.com.br/wp-content/uploads/2024/10/two-young-business-women-professionals-in-formal-w1-LGZUQA7.jpg?fit=1200%2C1800&ssl=1',
       tags: ['Wordpress','CRM'],
       results: '90% redução tempo administrativo',
+      site:'https://talentharborai.com.br/'
     },
-    {
-      title: 'Consultoria Empresarial',
-      category: 'Marketing Digital',
-      description: 'Campanha completa de tráfego pago e social media para consultoria em gestão.',
-      image: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tags: ['Google Ads', 'Social Media', 'Landing Page'],
-      results: '400% ROI em campanhas',
-    },
+    
     {
       title: 'Startup SOS Mecânicos',
       category: 'Branding + Web',
@@ -58,6 +56,7 @@ const Portfolio: React.FC = () => {
       image: 'https://sosmecanicos.com.br/assets/hero-automotive-DgaNSDLL.jpg',
       tags: ['Branding', 'UX/UI', 'Sistema', 'SAAS', 'Nextjs'],
       results: 'Captação R$ 500k investimento',
+      site:'https://sosmecanicos.com.br/'
     },
     {
       title: 'Sistema de agendamentos para salão de beleza',
@@ -83,11 +82,20 @@ const Portfolio: React.FC = () => {
       tags: ['Automação', 'Sistema No-Code', 'Website'],
       results: '250% aumento na eficiência',
     },
+    {
+      title: 'Venha Vender',
+      category:  'Sistema de anúncios',
+      description: 'Sistema de controle de condomínios com gestão de moradores e reservas.',
+      image: 'https://images.pexels.com/photos/7820321/pexels-photo-7820321.jpeg',
+      tags: ['Website', 'Anúncios', 'SAAS'],
+      results: '250% aumento na eficiência',
+    },
   
   ];
 
   const categories = ['Todos', 'Desenvolvimento Web', 'Sistema No-Code', 'Marketing Digital', 'Branding + Web'];
   const [selectedCategory, setSelectedCategory] = React.useState('Todos');
+  const [selectedProject, setSelectedProject] = React.useState<(typeof projects)[number] | null>(null);
 
   const filteredProjects = selectedCategory === 'Todos' 
     ? projects 
@@ -143,9 +151,14 @@ const Portfolio: React.FC = () => {
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute bottom-4 right-4">
+                    <button
+                      type="button"
+                      onClick={() => setSelectedProject(project)}
+                      aria-label={`Abrir detalhes de ${project.title}`}
+                      className="absolute bottom-4 right-4 p-2 rounded-full bg-black/40 hover:bg-black/60 transition-colors cursor-pointer"
+                    >
                       <ExternalLink className="h-6 w-6 text-white" />
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div className="p-6">
@@ -171,6 +184,72 @@ const Portfolio: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {selectedProject && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center"
+          role="dialog"
+          aria-modal="true"
+        >
+          <div
+            className="absolute inset-0 bg-black/50"
+            onClick={() => setSelectedProject(null)}
+          />
+          <div className="relative z-10 max-w-3xl w-full mx-4 bg-white rounded-xl shadow-2xl overflow-hidden">
+            <div className="relative">
+              <img
+                src={selectedProject.image}
+                alt={selectedProject.title}
+                className="w-full h-64 object-cover"
+              />
+              <button
+                type="button"
+                onClick={() => setSelectedProject(null)}
+                aria-label="Fechar"
+                className="absolute top-4 right-4 p-2 rounded-full bg-black/40 hover:bg-black/60 transition-colors"
+              >
+                <X className="h-5 w-5 text-white" />
+              </button>
+            </div>
+            <div className="p-6">
+              <div className="text-sm text-blue-600 font-medium mb-2">Tipo de serviço: {selectedProject.category}</div>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-2">Empresa: {selectedProject.title}</h3>
+              <p className="text-gray-700 mb-4">Descrição: {selectedProject.description}</p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {selectedProject.tags.map((tag, tagIndex) => (
+                  <span key={tagIndex} className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-3">
+                <div className="text-sm text-blue-800 font-medium">Resultado:</div>
+                <div className="text-blue-900 font-semibold">{selectedProject.results}</div>
+              </div>
+              <div className="mt-6 flex flex-wrap gap-3">
+                {selectedProject.site && (
+                  <a
+                    href={selectedProject.site}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors"
+                  >
+                    Abrir site do cliente
+                  </a>
+                )}
+                <a
+                  href={`https://wa.me/5511951505824?text=${encodeURIComponent('Olá! Vim pelo portfólio e gostaria de saber mais sobre: ' + selectedProject.title)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-green-600 text-white font-semibold hover:bg-green-700 transition-colors"
+                >
+                  Falar no WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Stats Section */}
       <section className="py-20 bg-gray-50">
