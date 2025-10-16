@@ -90,6 +90,14 @@ const Portfolio: React.FC = () => {
       tags: ['Website', 'Anúncios', 'SAAS'],
       results: '250% aumento na eficiência',
     },
+    {
+      title: 'Recicla LV',
+      category:  'Site institucional',
+      description: 'Site institucional para uma empresa de reciclagem.',
+      image: 'https://image.thum.io/get/width/1200/https://www.canva.com/design/DAG1-PIhWLs/8TqBPZvF6ELDAG6nOwcG4w/view',
+      tags: ['Website', 'Wordpress'],
+      results: 'Novo site',
+    },
   
   ];
 
