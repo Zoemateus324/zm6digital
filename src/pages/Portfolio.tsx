@@ -2,6 +2,7 @@ import React from 'react';
 import { ExternalLink, ArrowRight, X } from 'lucide-react';
 
 const Portfolio: React.FC = () => {
+  const FALLBACK_IMAGE = 'https://placehold.co/1200x800?text=Imagem+indisponivel';
   const projects = [
     {
       title: 'Lounge Multimídia',
@@ -9,7 +10,7 @@ const Portfolio: React.FC = () => {
       description: 'Loja virtual completa com sistema de pagamento, gestão de estoque e painel administrativo.',
       image: 'https://loungemultimidia.com.br/wp-content/uploads/2024/11/WhatsApp-Image-2023-03-02-at-20.40.45.jpeg',
       tags: ['E-commerce', 'wordpress'],
-      results: '+200% acessos online',
+      results: 'Novo site',
       site:'https://loungemultimidia.com.br/'
     },
     {
@@ -18,7 +19,7 @@ const Portfolio: React.FC = () => {
       description: 'Plataforma para agendamento de consultas, prontuário eletrônico e gestão de pacientes.',
       image: 'https://i0.wp.com/habitatnaturale.com.br/wp-content/uploads/2022/08/IMG_6830-scaled.jpg?resize=1024%2C682&ssl=1',
       tags: ['Wordpress', 'Automação', 'CRM'],
-      results: '90% redução tempo administrativo',
+      results: 'Novo site',
       site:'https://habitatnaturale.com.br/'
     },
     {
@@ -27,14 +28,14 @@ const Portfolio: React.FC = () => {
       description: 'Loja virtual completa com sistema de pagamento, gestão de estoque e painel administrativo.',
       image: 'https://archluxiluminacao.com.br/wp-content/uploads/2024/10/Artboard-20-1.webp',
       tags: ['E-commerce', 'wordpress'],
-      results: '+200% acessos online',
+      results: 'Novo site',
       site:'https://archluxiluminacao.com.br/'
     },
     {
       title: 'Garantix Invest',
       category: 'Desenvolvimento Web',
       description: 'Site institucional para uma empresa no setor financeiro Garantix Investimentos.',
-      image: 'https://image.thum.io/get/width/1200/https://www.canva.com/design/DAG19oIayyk/ZWGOksx3TTUFDADcyqPHJg/view',
+      image: 'https://s.wordpress.com/mshots/v1/https%3A%2F%2Fgarantixinvest.com.br?w=1200',
       tags: ['Site', 'React', 'Nextjs'],
       results: 'Novo site',
       site:'https://garantixinvest.com.br/'
@@ -45,7 +46,7 @@ const Portfolio: React.FC = () => {
       description: 'A Solução Ideal para o Desenvolvimento de Talentos na Sua Empresa.',
       image: 'https://i0.wp.com/talentharborai.com.br/wp-content/uploads/2024/10/two-young-business-women-professionals-in-formal-w1-LGZUQA7.jpg?fit=1200%2C1800&ssl=1',
       tags: ['Wordpress','CRM'],
-      results: '90% redução tempo administrativo',
+      results: 'Novo site',
       site:'https://talentharborai.com.br/'
     },
     
@@ -55,7 +56,7 @@ const Portfolio: React.FC = () => {
       description: 'Identidade visual completa e plataforma educacional para startup de tecnologia.',
       image: 'https://image.thum.io/get/width/1200/https://www.canva.com/design/DAG19r_lnVg/DncdCxMODmyNfD_TbbseKg/view',
       tags: ['Branding', 'UX/UI', 'Sistema', 'SAAS', 'Nextjs'],
-      results: 'Captação R$ 500k investimento',
+      results: 'Novo site',
       site:'https://sosmecanicos.com.br/'
     },
     {
@@ -64,7 +65,7 @@ const Portfolio: React.FC = () => {
       description: 'Sistema de pedidos online, cardápio digital e automação de WhatsApp.',
       image: 'https://9934cc0308d05845e5fae47761536aad.cdn.bubble.io/f1754045188143x147088987578759780/Captura%20de%20tela%202025-08-01%20074518.png?_gl=1*1kxwv8q*_gcl_au*MTc4OTE3NzY1Ni4xNzU0MDQ1MDM4*_ga*MTIyMDQ4MzYwNy4xNzU0MDQ0OTc0*_ga_BFPVR2DEE2*czE3NTQwNDQ5NzQkbzEkZzEkdDE3NTQwNDUxNjUkajIyJGwwJGgw',
       tags: ['Automação', 'Sistema No-Code', 'Website'],
-      results: '150% aumento pedidos online',
+      results: 'Novo site',
     },
     {
       title: 'Sistema para controle de obras e serviços',
@@ -72,7 +73,7 @@ const Portfolio: React.FC = () => {
       description: 'Sistema de controle de obras e serviços com gestão de tarefas e prazos.',
       image: 'https://829a773aacf8d24ff7f0c4344f737ff2.cdn.bubble.io/cdn-cgi/image/w=768,h=538,f=auto,dpr=1,fit=contain/f1716644654995x903806864428851100/6961929.jpg',
       tags: ['Automação', 'Sistema No-Code', 'Website'],
-      results: '250% aumento na eficiência',
+      results: 'Novo site',
     },
     {
       title: 'Sistema para controle condomínios',
@@ -80,15 +81,15 @@ const Portfolio: React.FC = () => {
       description: 'Sistema de controle de condomínios com gestão de moradores e reservas.',
       image: 'https://images.pexels.com/photos/7820321/pexels-photo-7820321.jpeg',
       tags: ['Automação', 'Sistema No-Code', 'Website'],
-      results: '250% aumento na eficiência',
+      results: 'Novo site',
     },
     {
       title: 'Venha Vender',
       category:  'Sistema de anúncios',
       description: 'Sistema de controle de condomínios com gestão de moradores e reservas.',
-      image: 'https://image.thum.io/get/width/1200/https://www.canva.com/design/DAG19hTCAv0/tomAeuqX8gGwOBwvDEei1g/view',
+      image: 'https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.canva.com%2Fdesign%2FDAG19hTCAv0%2FtomAeuqX8gGwOBwvDEei1g%2Fview?w=1600',
       tags: ['Website', 'Anúncios', 'SAAS'],
-      results: '250% aumento na eficiência',
+      results: 'Novo site',
     },
     {
       title: 'Recicla LV',
@@ -154,9 +155,13 @@ const Portfolio: React.FC = () => {
               <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
                 <div className="relative overflow-hidden">
                   <img 
-                    src={project.image} 
+                    src={project.image}
                     alt={project.title}
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                    onError={(e) => {
+                      const target = e.currentTarget as HTMLImageElement;
+                      if (target.src !== FALLBACK_IMAGE) target.src = FALLBACK_IMAGE;
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <button
@@ -209,6 +214,10 @@ const Portfolio: React.FC = () => {
                 src={selectedProject.image}
                 alt={selectedProject.title}
                 className="w-full h-64 object-cover"
+                onError={(e) => {
+                  const target = e.currentTarget as HTMLImageElement;
+                  if (target.src !== FALLBACK_IMAGE) target.src = FALLBACK_IMAGE;
+                }}
               />
               <button
                 type="button"
