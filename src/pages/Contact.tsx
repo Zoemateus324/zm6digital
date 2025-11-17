@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
 import { trackFaleConosco } from '../utils/analytics';
+import Seo from '../components/Seo';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -99,6 +100,36 @@ const Contact: React.FC = () => {
 
   return (
     <div className="pt-16">
+      <Seo
+        title="Solicite orçamento e fale com a ZM6 Digital"
+        description="Preencha o formulário de contato e receba uma proposta personalizada para sites, sistemas, automação ou marketing digital."
+        canonical="/contact"
+        keywords={[
+          'contato zm6 digital',
+          'solicitar orçamento site',
+          'agência marketing contato',
+          'falar com zm6 digital',
+        ]}
+        type="ContactPage"
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'ContactPage',
+          name: 'Contato ZM6 Digital',
+          url: 'https://zm6digital.com.br/contact',
+          mainEntity: {
+            '@type': 'Organization',
+            name: 'ZM6 Digital',
+            email: 'contato@zm6digital.com',
+            telephone: '+55 11 95150-5824',
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: 'São Paulo',
+              addressRegion: 'SP',
+              addressCountry: 'BR',
+            },
+          },
+        }}
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-gray-50 to-blue-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Globe, Smartphone, BarChart3, Palette, Settings, MessageSquare } from 'lucide-react';
 import { trackFaleConosco } from '../utils/analytics';
+import Seo from '../components/Seo';
 
 const Services: React.FC = () => {
   const navigate = useNavigate();
@@ -75,6 +76,18 @@ const Services: React.FC = () => {
 
   return (
     <div className="pt-16">
+      <Seo
+        title="Serviços de marketing, tecnologia e automação"
+        description="Veja como a ZM6 Digital desenvolve sites, sistemas, automações, branding e campanhas de tráfego pago para aumentar suas vendas."
+        canonical="/services"
+        keywords={[
+          'serviços de marketing',
+          'desenvolvimento web profissional',
+          'automação de marketing',
+          'branding e tráfego pago',
+        ]}
+        type="service"
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-gray-50 to-blue-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

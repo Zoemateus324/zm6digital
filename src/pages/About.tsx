@@ -1,5 +1,6 @@
 import React from 'react';
 import { Target, Eye, Heart, Award, Users, Lightbulb } from 'lucide-react';
+import Seo from '../components/Seo';
 
 const About: React.FC = () => {
   const values = [
@@ -22,6 +23,18 @@ const About: React.FC = () => {
 
   return (
     <div className="pt-16">
+      <Seo
+        title="Sobre a ZM6 Digital"
+        description="Conheça a história da ZM6 Digital, a agência que une marketing e tecnologia para entregar projetos completos de sites, sistemas e estratégias de crescimento."
+        canonical="/about"
+        keywords={[
+          'sobre a zm6 digital',
+          'agência marketing e tecnologia',
+          'história zm6 digital',
+          'marketing e desenvolvimento',
+        ]}
+        type="article"
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-gray-50 to-blue-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

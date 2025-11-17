@@ -1,5 +1,6 @@
 import React from 'react';
 import { ExternalLink, ArrowRight, X } from 'lucide-react';
+import Seo from '../components/Seo';
 
 const Portfolio: React.FC = () => {
   const FALLBACK_IMAGE = 'https://placehold.co/1200x800?text=Imagem+indisponivel';
@@ -112,6 +113,18 @@ const Portfolio: React.FC = () => {
 
   return (
     <div className="pt-16">
+      <Seo
+        title="Portfólio e cases de sucesso"
+        description="Projetos de sites, e-commerces, sistemas no-code e campanhas que a ZM6 Digital entregou para clientes de diferentes segmentos."
+        canonical="/portfolio"
+        keywords={[
+          'portfólio zm6 digital',
+          'cases marketing digital',
+          'sites desenvolvidos',
+          'sistemas no-code',
+        ]}
+        type="article"
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-gray-50 to-blue-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

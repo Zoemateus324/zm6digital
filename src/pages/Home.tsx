@@ -2,6 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Code, Megaphone, Zap, Star, CheckCircle, Users, Award, TrendingUp } from 'lucide-react';
 import { trackFaleConosco } from '../utils/analytics';
+import Seo from '../components/Seo';
+import { siteMetadata } from '../seo/metadata';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -64,6 +66,39 @@ const Home: React.FC = () => {
 
   return (
     <div className="pt-16">
+      <Seo
+        title="Marketing e tecnologia para gerar resultados"
+        description="Sites, sistemas, automações e campanhas de marketing que transformam a presença digital da sua empresa em vendas previsíveis."
+        canonical="/"
+        keywords={[
+          'marketing digital em São Paulo',
+          'desenvolvimento de sites',
+          'agência de automação',
+          'funil de vendas',
+          'zm6 digital',
+        ]}
+        structuredData={{
+          '@context': 'https://schema.org',
+          '@type': 'Organization',
+          name: siteMetadata.siteName,
+          url: siteMetadata.siteUrl,
+          logo: siteMetadata.defaultImage,
+          sameAs: [
+            siteMetadata.social.instagram,
+            siteMetadata.social.facebook,
+            siteMetadata.social.whatsapp,
+          ],
+          contactPoint: [
+            {
+              '@type': 'ContactPoint',
+              telephone: siteMetadata.contact.phone,
+              contactType: 'sales',
+              areaServed: 'BR',
+              availableLanguage: ['Portuguese'],
+            },
+          ],
+        }}
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-gray-50 to-blue-50 py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
