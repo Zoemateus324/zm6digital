@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Code, Megaphone, Zap, Star, CheckCircle, Users, Award, TrendingUp } from 'lucide-react';
+import { trackFaleConosco } from '../utils/analytics';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -79,7 +80,10 @@ const Home: React.FC = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
-                  onClick={() => navigate('/contact')}
+                  onClick={() => {
+                    trackFaleConosco();
+                    navigate('/contact');
+                  }}
                   className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-600 hover:to-blue-700 transition-all duration-200 transform hover:scale-105 flex items-center justify-center group"
                 >
                   Solicitar Orçamento
@@ -204,7 +208,10 @@ const Home: React.FC = () => {
             Fale com nossos especialistas e descubra como podemos ajudar você a alcançar seus objetivos.
           </p>
           <button
-            onClick={() => navigate('/contact')}
+            onClick={() => {
+              trackFaleConosco();
+              navigate('/contact');
+            }}
             className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105"
           >
             Fale com um Especialista

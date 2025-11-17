@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X, Zap } from 'lucide-react';
 import { NavLink, useNavigate } from 'react-router-dom';
+import { trackFaleConosco } from '../utils/analytics';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -57,6 +58,7 @@ const Header: React.FC = () => {
           {/* CTA Button */}
           <button
             onClick={() => {
+              trackFaleConosco();
               navigate('/contact');
               setIsMenuOpen(false);
             }}
@@ -94,6 +96,7 @@ const Header: React.FC = () => {
               ))}
               <button
                 onClick={() => {
+                  trackFaleConosco();
                   navigate('/contact');
                   setIsMenuOpen(false);
                 }}
