@@ -1,11 +1,16 @@
 import React from 'react';
-import { Zap, Mail, Phone, MapPin, Instagram, Linkedin, Facebook } from 'lucide-react';
+import { Zap, Mail, Phone, MapPin, Instagram, Facebook } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-interface FooterProps {
-  setCurrentPage: (page: string) => void;
-}
+const Footer: React.FC = () => {
+  const quickLinks = [
+    { label: 'Home', path: '/' },
+    { label: 'Sobre Nós', path: '/about' },
+    { label: 'Serviços', path: '/services' },
+    { label: 'Portfólio', path: '/portfolio' },
+    { label: 'Contato', path: '/contact' },
+  ];
 
-const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -39,14 +44,14 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Links Rápidos</h3>
             <ul className="space-y-2">
-              {['Home', 'Sobre Nós', 'Serviços', 'Portfólio', 'Contato'].map((item, index) => (
-                <li key={item}>
-                  <button
-                    onClick={() => setCurrentPage(['home', 'about', 'services', 'portfolio', 'contact'][index])}
+              {quickLinks.map((item) => (
+                <li key={item.path}>
+                  <Link
+                    to={item.path}
                     className="text-gray-300 hover:text-white transition-colors duration-200"
                   >
-                    {item}
-                  </button>
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -1,11 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Code, Megaphone, Zap, Star, CheckCircle, Users, Award, TrendingUp } from 'lucide-react';
 
-interface HomeProps {
-  setCurrentPage: (page: string) => void;
-}
-
-const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
+const Home: React.FC = () => {
+  const navigate = useNavigate();
   const services = [
     {
       icon: <Code className="h-8 w-8" />,
@@ -80,15 +78,15 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
                 Transforme sua presença online em uma máquina de vendas.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button 
-                  onClick={() => setCurrentPage('contact')}
+                <button
+                  onClick={() => navigate('/contact')}
                   className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-600 hover:to-blue-700 transition-all duration-200 transform hover:scale-105 flex items-center justify-center group"
                 >
                   Solicitar Orçamento
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
                 </button>
-                <button 
-                  onClick={() => setCurrentPage('about')}
+                <button
+                  onClick={() => navigate('/about')}
                   className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold hover:border-blue-500 hover:text-blue-600 transition-all duration-200"
                 >
                   Conheça Nossa História
@@ -146,10 +144,10 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 group cursor-pointer"
-                onClick={() => setCurrentPage('services')}
+                onClick={() => navigate('/services')}
               >
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   {service.icon}
@@ -205,8 +203,8 @@ const Home: React.FC<HomeProps> = ({ setCurrentPage }) => {
           <p className="text-xl text-blue-100 mb-8">
             Fale com nossos especialistas e descubra como podemos ajudar você a alcançar seus objetivos.
           </p>
-          <button 
-            onClick={() => setCurrentPage('contact')}
+          <button
+            onClick={() => navigate('/contact')}
             className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105"
           >
             Fale com um Especialista
