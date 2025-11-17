@@ -3,12 +3,20 @@ import express from 'express';
 import cors from 'cors';
 import axios from 'axios';
 import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// Servir arquivos estáticos da build do Vite
+app.use(express.static(path.join(__dirname, 'dist')));
 
 app.post('/send-email', async (req, res) => {
   try {
@@ -36,6 +44,11 @@ app.post('/send-email', async (req, res) => {
     console.error(error.response?.data || error.message);
     res.status(500).json({ success: false, error: error.message });
   }
+});
+
+// Redirecionar todas as outras rotas para index.html (SPA fallback)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 const PORT = 3001;
