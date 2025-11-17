@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "npx update-browserslist-db@latest",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
