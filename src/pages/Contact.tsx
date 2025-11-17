@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
+import { trackFaleConosco } from '../utils/analytics';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +12,7 @@ const Contact: React.FC = () => {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const WEBHOOK_URL = 'https://n8n.lojacartel.com.br/webhook/0ae28df4-9f20-4960-baf9-49cac1fd589d';
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -19,58 +21,48 @@ const Contact: React.FC = () => {
     });
   };
 
- const handleSubmit = (e: React.FormEvent) => {
-  e.preventDefault();
-  const message = encodeURIComponent(
-    `Olá! Gostaria de solicitar um orçamento.\n\nNome: ${formData.name}\nEmpresa: ${formData.company}\nServiço: ${formData.service}\nMensagem: ${formData.message}`
-  );
-  const whatsappUrl = `https://wa.me/5511951505824?text=${message}`;
-  window.open(whatsappUrl, '_blank');
-  
-  // Mostrar confirmação no seu UI
-  setIsSubmitted(true);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
 
-  setTimeout(() => {
-    setIsSubmitted(false);
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      service: '',
-      message: ''
-    });
-  }, 3000);
-};
+    try {
+      const response = await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          submittedAt: new Date().toISOString(),
+        }),
+      });
 
+      if (!response.ok) {
+        throw new Error('Resposta inválida do webhook');
+      }
 
+      trackFaleConosco();
+      setIsSubmitted(true);
 
-
- const handleWhatsAppClick = () => {
-  console.log('formData atual:', formData);
-  const { name, company, service, message } = formData;
-  
- const textMessage = 
-  `Olá! Gostaria de solicitar um orçamento.\n` +
-  `Nome: ${name || '-'}\n` +
-  `Empresa: ${company || '-'}\n` +
-  `Serviço: ${service || '-'}\n` +
-  `Mensagem: ${message || '-'}`;
-
-  const encodedMessage = encodeURIComponent(textMessage);
-  const whatsappUrl = `https://wa.me/5511951505824?text=${encodedMessage}`;
-
-  console.log('URL WhatsApp:', whatsappUrl);
-  window.open(whatsappUrl, '_blank');
-};
-
-
-
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          service: '',
+          message: ''
+        });
+      }, 3000);
+    } catch (error) {
+      console.error('Erro ao acionar webhook:', error);
+    }
+  };
   const contactInfo = [
     {
       icon: <Phone className="h-6 w-6" />,
       title: 'Telefone',
-      info: '(11) 95150-5824',
+      info: '55 (11) 95150-5824',
       action: () => window.open('https://wa.me/5511951505824', '_blank')
     },
     {
@@ -275,19 +267,12 @@ const Contact: React.FC = () => {
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-4">
-                      {/* <button
+                      <button
                         type="submit"
                         className="flex-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white py-4 px-8 rounded-lg font-semibold hover:from-blue-600 hover:to-blue-700 transition-all duration-200 flex items-center justify-center group"
                       >
                         <Send className="mr-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
-                        Enviar Solicitação
-                      </button> */}
-                      <button
-                        type="button"
-                        onClick={handleWhatsAppClick}
-                        className="flex-1 bg-green-500 text-white py-4 px-8 rounded-lg font-semibold hover:bg-green-600 transition-colors duration-200"
-                      >
-                        Enviar via WhatsApp
+                        Enviar mensagem
                       </button>
                     </div>
                   </form>
