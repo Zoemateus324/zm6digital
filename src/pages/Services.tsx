@@ -12,42 +12,42 @@ const Services: React.FC = () => {
       title: 'Sites Institucionais e Landing Pages',
       description: 'Sites responsivos e otimizados para conversão, criados com as melhores práticas de UX/UI e SEO.',
       features: ['Design responsivo', 'Otimização SEO', 'Alta conversão', 'Carregamento rápido'],
-      price: 'A partir de R$ 1.500',
+     
     },
     {
       icon: <Settings className="h-10 w-10" />,
       title: 'Desenvolvimento de sistemas personalizados',
       description: 'Sistemas web completos e aplicativos sem ou com código, com funcionalidades avançadas e integrations.',
       features: ['Desenvolvimento rápido', 'Integração com APIs', 'Dashboard personalizado', 'Escalabilidade'],
-      price: 'A partir de R$ 4.500',
+    
     },
     {
       icon: <Smartphone className="h-10 w-10" />,
       title: 'Social Media e Tráfego Pago',
       description: 'Gestão completa de redes sociais e campanhas de tráfego pago que geram resultados mensuráveis.',
       features: ['Gestão de redes sociais', 'Campanhas Google Ads', 'Facebook e Instagram Ads', 'Relatórios detalhados'],
-      price: 'A partir de R$ 800/mês',
+     
     },
     {
       icon: <Palette className="h-10 w-10" />,
       title: 'Branding e Identidade Visual',
       description: 'Criação de marca completa, desde logo até manual de identidade visual para fortalecer sua presença.',
       features: ['Logo e identidade', 'Manual de marca', 'Aplicações diversas', 'Versões digitais e impressas'],
-      price: 'A partir de R$ 1.200',
+    
     },
     {
       icon: <BarChart3 className="h-10 w-10" />,
       title: 'Automação e Funil de Vendas',
       description: 'Sistemas de automação de marketing que nutrem leads e convertem prospects em clientes.',
       features: ['Automação de email', 'Chatbots inteligentes', 'Funis de conversão', 'Integração CRM'],
-      price: 'A partir de R$ 1.800',
+    
     },
     {
       icon: <MessageSquare className="h-10 w-10" />,
       title: 'Consultoria Estratégica',
       description: 'Análise completa do seu negócio digital e desenvolvimento de estratégias personalizadas.',
       features: ['Auditoria digital', 'Planejamento estratégico', 'Análise de concorrência', 'Plano de ação'],
-      price: 'A partir de R$ 500/hora',
+     
     },
   ];
 
@@ -114,7 +114,6 @@ const Services: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
-                    <div className="text-2xl font-bold text-blue-600">{service.price}</div>
                   </div>
                 </div>
                 <p className="text-gray-600 mb-6">{service.description}</p>
