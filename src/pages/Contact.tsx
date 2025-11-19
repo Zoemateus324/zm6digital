@@ -13,12 +13,39 @@ const Contact: React.FC = () => {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const WEBHOOK_URL = 'https://n8n.lojacartel.com.br/webhook/48bd7ee3-64e7-4b9e-b6d7-5642be9fa9da';
+  const WEBHOOK_URL = 'https://n8n.lojacartel.com.br/webhook-test/48bd7ee3-64e7-4b9e-b6d7-5642be9fa9da';
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
+    });
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let value = e.target.value.replace(/\D/g, ''); // Remove tudo que não é número
+    
+    // Limita a 11 dígitos (9 do celular + 2 da área)
+    if (value.length > 11) {
+      value = value.slice(0, 11);
+    }
+
+    // Formata como (XX) XXXXX-XXXX
+    let formatted = '';
+    if (value.length > 0) {
+      formatted = '55 ';
+      if (value.length <= 2) {
+        formatted += value;
+      } else if (value.length <= 7) {
+        formatted += `(${value.slice(0, 2)}) ${value.slice(2)}`;
+      } else {
+        formatted += `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`;
+      }
+    }
+
+    setFormData({
+      ...formData,
+      phone: formatted
     });
   };
 
@@ -237,13 +264,14 @@ const Contact: React.FC = () => {
                           Telefone
                         </label>
                         <input
-                          type="tel"
+                          type="text"
                           id="phone"
                           name="phone"
                           value={formData.phone}
-                          onChange={handleInputChange}
+                          onChange={handlePhoneChange}
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
-                          placeholder="(11) 99999-9999"
+                          placeholder="55 (11) 99999-9999"
+                          maxLength={19}
                         />
                       </div>
                       <div>
