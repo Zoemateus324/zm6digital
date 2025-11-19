@@ -13,7 +13,7 @@ const Contact: React.FC = () => {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const WEBHOOK_URL = 'https://n8n.lojacartel.com.br/webhook/0ae28df4-9f20-4960-baf9-49cac1fd589d';
+  const WEBHOOK_URL = 'https://n8n.lojacartel.com.br/webhook/48bd7ee3-64e7-4b9e-b6d7-5642be9fa9da';
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
