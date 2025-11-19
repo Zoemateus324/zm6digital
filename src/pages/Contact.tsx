@@ -25,15 +25,19 @@ const Contact: React.FC = () => {
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let value = e.target.value.replace(/\D/g, ''); // Remove tudo que não é número
     
+    // Se o valor começar com 55, remove para processar corretamente
+    if (value.startsWith('55')) {
+      value = value.slice(2);
+    }
+    
     // Limita a 11 dígitos (9 do celular + 2 da área)
     if (value.length > 11) {
       value = value.slice(0, 11);
     }
 
-    // Formata como (XX) XXXXX-XXXX
-    let formatted = '';
+    // Formata como 55 (XX) XXXXX-XXXX
+    let formatted = '55 ';
     if (value.length > 0) {
-      formatted = '55 ';
       if (value.length <= 2) {
         formatted += value;
       } else if (value.length <= 7) {
