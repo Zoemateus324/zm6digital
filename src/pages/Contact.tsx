@@ -126,13 +126,13 @@ const Contact: React.FC = () => {
 
   const services = [
     'Sites Institucionais',
+    'E-commerces',
     'Landing Pages',
-    'Desenvolvimento No-Code',
+    'Desenvolvimento de sistemas',
     'Social Media',
     'Tráfego Pago',
     'Branding',
     'Automação',
-    'Consultoria Estratégica',
     'Outro'
   ];
 
