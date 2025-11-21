@@ -7,7 +7,7 @@ const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
+    phone: '55 ',
     company: '',
     service: '',
     message: ''
@@ -57,6 +57,12 @@ const Contact: React.FC = () => {
     e.preventDefault();
 
     try {
+      const cleanPhone = (() => {
+        let v = formData.phone.replace(/\D/g, '');
+        if (!v.startsWith('55')) v = '55' + v;
+        return v;
+      })();
+
       const response = await fetch(WEBHOOK_URL, {
         method: 'POST',
         headers: {
@@ -64,6 +70,7 @@ const Contact: React.FC = () => {
         },
         body: JSON.stringify({
           ...formData,
+          phone: cleanPhone,
           submittedAt: new Date().toISOString(),
         }),
       });
@@ -80,7 +87,7 @@ const Contact: React.FC = () => {
         setFormData({
           name: '',
           email: '',
-          phone: '',
+          phone: '55 ',
           company: '',
           service: '',
           message: ''
@@ -268,13 +275,14 @@ const Contact: React.FC = () => {
                           Telefone
                         </label>
                         <input
-                          type="text"
+                          type="tel"
                           id="phone"
                           name="phone"
                           value={formData.phone}
                           onChange={handlePhoneChange}
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
                           placeholder="55 (11) 99999-9999"
+                          inputMode="tel"
                           maxLength={19}
                         />
                       </div>
